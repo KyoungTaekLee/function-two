@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    function dataFunc(a,b,c,d) {
+      let obj = {
+        parent: document.querySelector(a),
+        children: document.createElement(b),
+        grandchildren: document.createElement(c),
+        grandchildrenText: d
+      }
+      return obj;
+    }
+    let tagArray = ["div","footer","section"];
+    let dataForm = dataFunc("#root",tagArray[1],"li","hello");
+
+    let root = dataForm.parent;
+    console.dir(root);
+    let ul = dataForm.children;
+    root.appendChild(ul);
+    let li = dataForm.grandchildren;
+    ul.appendChild(li);
+    li.textContent = dataForm.grandchildrenText;
+  </script>
+</body>
+
+</html>

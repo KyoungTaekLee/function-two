@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    let rootElement = document.getElementById("root");
+    console.dir(rootElement);
+    let weekend = ["월", "화", "수"];
+    let bgcolor = ["red", "gray", "yellow"];
+    let fontsz = ["20px", "40px", "60px"];
+    let counter = 0;
+    /*function increase(value) {
+      value = value + 1;
+      console.log(value);
+      return 0;
+    }*/
+    document.write("페이지 고정");
+
+    rootElement.addEventListener("click", function () {
+      rootElement.textContent = weekend[counter];
+      rootElement.style.backgroundColor = bgcolor[counter];
+      rootElement.style.fontSize = fontsz[counter];
+      counter += 1;
+      if (counter === weekend.length) {
+        counter = 0;
+      }
+      console.log(counter);
+    });
+
+
+  </script>
+</body>
+
+</html>
